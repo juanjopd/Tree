@@ -1,6 +1,7 @@
 
 package pkgView;
 
+import javax.swing.JOptionPane;
 import pkgClass.clsNode;
 import pkgClass.clsTree;
 
@@ -37,17 +38,26 @@ public class frmTreeBinario extends javax.swing.JFrame {
         btnInOrden = new javax.swing.JButton();
         btnPreOrden = new javax.swing.JButton();
         btnPostOrden = new javax.swing.JButton();
+        btnAltura = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Arboles Binarios");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setFocusable(false);
+        jPanel1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jPanel1.setName(""); // NOI18N
 
+        txtNumber.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         txtNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumberActionPerformed(evt);
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         jButton1.setText("Insertar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +65,7 @@ public class frmTreeBinario extends javax.swing.JFrame {
             }
         });
 
+        btnInOrden.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         btnInOrden.setText("Listar in orden");
         btnInOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +73,7 @@ public class frmTreeBinario extends javax.swing.JFrame {
             }
         });
 
+        btnPreOrden.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         btnPreOrden.setText("Listar pre orden");
         btnPreOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,10 +81,27 @@ public class frmTreeBinario extends javax.swing.JFrame {
             }
         });
 
+        btnPostOrden.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         btnPostOrden.setText("Listar post orden");
         btnPostOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPostOrdenActionPerformed(evt);
+            }
+        });
+
+        btnAltura.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        btnAltura.setText("Altura del arbol");
+        btnAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlturaActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        btnBuscar.setText("Dato a buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -83,32 +112,40 @@ public class frmTreeBinario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
+                        .addGap(168, 168, 168)
                         .addComponent(txtNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(btnInOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnInOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnPreOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPreOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(btnPostOrden)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(42, 42, 42)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInOrden)
                     .addComponent(btnPreOrden)
                     .addComponent(btnPostOrden))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAltura)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,6 +186,21 @@ public class frmTreeBinario extends javax.swing.JFrame {
         this.tree.listarPostOrden(this.tree.getRoot());
     }//GEN-LAST:event_btnPostOrdenActionPerformed
 
+    private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlturaActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        try{
+            int dato = Integer.parseInt(JOptionPane.showInputDialog(this, "Dato a buscar"));
+            JOptionPane.showMessageDialog(this,tree.existe(dato)? "si existe el dato" : "No existe el dato");
+        }catch (Exception e){
+            JOptionPane.showConfirmDialog(this, "Error al buscar el dato");
+            
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -186,6 +238,8 @@ public class frmTreeBinario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAltura;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnInOrden;
     private javax.swing.JButton btnPostOrden;
     private javax.swing.JButton btnPreOrden;

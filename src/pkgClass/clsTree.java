@@ -66,7 +66,23 @@ public class clsTree {
        }
    }
    
-
+   public boolean existe(int dato){
+      clsNode rootTmp = root;
+      while (rootTmp != null){
+          if(dato == rootTmp.getDato()){
+              return true;
+          }else{
+              if(dato > rootTmp.getDato()){
+                  rootTmp = rootTmp.getDer();
+              }else{
+                  rootTmp = rootTmp.getIzq();
+              }
+          }
+      }
+        return false;
+   }
+   
+ 
     public clsNode getRoot() {
         return root;
     }
