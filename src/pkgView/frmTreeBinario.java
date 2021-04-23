@@ -188,6 +188,7 @@ public class frmTreeBinario extends javax.swing.JFrame {
 
     private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlturaActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"La altura del arbol:  " + this.tree.retornarAltura() );
     }//GEN-LAST:event_btnAlturaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed

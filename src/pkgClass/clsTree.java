@@ -7,12 +7,13 @@ package pkgClass;
  */
 public class clsTree {
     private clsNode root;
+    int altura;
 
     public clsTree(clsNode root) {
         this.root = null;
     }
     
-   public void insertar(clsNode dato, clsNode rootTmp){
+    public void insertar(clsNode dato, clsNode rootTmp){
         if(this.getRoot() == null){
             this.setRoot(dato);
         }else{
@@ -34,7 +35,7 @@ public class clsTree {
         }
     } 
    
-   public void listarInOrden(clsNode rootTmp){
+    public void listarInOrden(clsNode rootTmp){
         if(rootTmp != null){
             if(rootTmp.getDer() != null){
                 listarInOrden(rootTmp.getDer());
@@ -45,7 +46,7 @@ public class clsTree {
         }
     }
    
-   public void listarPreOrden(clsNode rootTmp){
+    public void listarPreOrden(clsNode rootTmp){
        if(root != null){
            System.out.println("Pre orden " + "Number:" + rootTmp.getDato());
            if(rootTmp.getDer() != null){
@@ -56,7 +57,7 @@ public class clsTree {
        }
    }
    
-   public void listarPostOrden(clsNode rootTmp){
+    public void listarPostOrden(clsNode rootTmp){
        if(root != null){
            if(rootTmp.getDer() != null){
                listarPostOrden(rootTmp.getDer());
@@ -66,7 +67,7 @@ public class clsTree {
        }
    }
    
-   public boolean existe(int dato){
+    public boolean existe(int dato){
       clsNode rootTmp = root;
       while (rootTmp != null){
           if(dato == rootTmp.getDato()){
@@ -82,7 +83,21 @@ public class clsTree {
         return false;
    }
    
- 
+    private void retornarAltura(clsNode rootTmp, int nivel){
+       if(rootTmp != null){
+           retornarAltura(rootTmp.getIzq(), nivel+1);
+           if(nivel > altura )
+               altura=nivel;
+           retornarAltura(rootTmp.getDer(), nivel+1);
+       }
+   }
+   
+    public int retornarAltura(){
+       altura=0;
+       retornarAltura(root, 1);
+       return altura; 
+   }
+   
     public clsNode getRoot() {
         return root;
     }
